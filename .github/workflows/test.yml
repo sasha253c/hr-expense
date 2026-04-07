@@ -31,8 +31,6 @@ jobs:
     runs-on: ubuntu-22.04
     container: ${{ matrix.container }}
     name: ${{ matrix.name }}
-    env:
-      INCLUDE: "base"
     strategy:
       fail-fast: false
       matrix:
@@ -63,6 +61,8 @@ jobs:
         run: manifestoo -d . check-dev-status --default-dev-status=Beta
       - name: Initialize test db
         run: oca_init_test_database
+        env:
+          INCLUDE: "base"
       - name: Run tests
         run: oca_run_tests
       - uses: codecov/codecov-action@v4
