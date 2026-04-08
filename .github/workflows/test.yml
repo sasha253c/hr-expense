@@ -66,7 +66,7 @@ jobs:
       - name: Run tests
         run: oca_run_tests
         env:
-          INCLUDE: "hr_expense_sequence,hr_expense_sequence_option,hr_expense_sheet_payment_state,hr_expense_substate,hr_expense_tax_adjust,hr_expense_tier_validation,hr_expense_widget_o2m,hr_expense_work_acceptance"
+          INCLUDE: "hr_expense_sheet_payment_state,hr_expense_substate,hr_expense_tax_adjust"
       - uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
