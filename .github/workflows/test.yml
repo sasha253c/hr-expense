@@ -62,7 +62,7 @@ jobs:
       - name: Initialize test db
         run: oca_init_test_database
         env:
-          INCLUDE: "base,l10n_us"
+          INCLUDE: "base,l10n_ua"
       - name: Run tests
         run: oca_run_tests
       - uses: codecov/codecov-action@v4
